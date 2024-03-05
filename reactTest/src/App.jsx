@@ -1,13 +1,33 @@
-import React, { useState } from 'react'
-import Products from './Products';
+import { CustomerReviews,Footer, Hero, PopularProducts, Services, SpecialOffers, Subscribe, SuperQuality } from "./sections";
 
-function App() {
-  var [a,b] = useState(20);
-  return (
-    <div className='w-full h-screen bg-zinc-800 p-5 text-white'>
-      <Products age="25" data={{age: 25, name: "nilu"}}/>
-    </div>
-  )
-}
+const App = () => (
+  <main className="relative">
+    {/* <Nav /> */}
+    <section className="xl:padding-1 wide:padding-r padding-b">
+      <Hero />
+    </section>
+    <section className="padding">
+      <PopularProducts />
+    </section>
+    <section className="padding">
+      <SuperQuality />
+    </section>
+    <section className="padding-x py-10">
+      <Services />
+    </section>
+    <section className="padding">
+      <SpecialOffers />
+    </section>
+    <section className="bg-pale-blue padding">
+      <CustomerReviews />
+    </section>
+    <section className="padding-x sm:py-32 py-16 w-full">
+      <Subscribe />
+    </section>
+    <section className="bg-black padding-x padding-t pb-8">
+      <Footer />
+    </section>
+  </main>
+)
 
-export default App
+export default App;
