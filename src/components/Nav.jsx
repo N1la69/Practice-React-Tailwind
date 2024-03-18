@@ -20,9 +20,9 @@ function Nav() {
                 ${open?'top-20':'top-[-490px]'}`}>
                     {navLinks.map((item) => (
                         <motion.li key={item.label} className='md:my-0 my-7' variants={navVariants} initial="hidden" animate="visible">
-                            <a href={item.href} className='font-montserrat leading-normal text-lg text-slate-gray'>
+                            <motion.a href={item.href} className='font-montserrat leading-normal text-lg text-slate-gray'>
                                 {item.label}
-                            </a>
+                            </motion.a>
                         </motion.li>
                     ))}
                 </ul>

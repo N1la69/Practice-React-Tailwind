@@ -3,8 +3,16 @@ import { bigShoe1 } from "../assets/images";
 import Button from "../components/Button";
 import { statistics } from "../constants";
 import { motion } from "framer-motion";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const Hero = () => {
+
+  useEffect(()=>{
+    AOS.init({duration: "1000"})
+  },[])
+
   return (
     <section id="home" className="w-full flex flex-col xl:flex-row justify-center min-h-screen gap-10 max-container pl-7 z-10">
       <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
@@ -25,11 +33,11 @@ const Hero = () => {
           Discover stylish Nike arrivals, quality comfort, and innovation for your active life.
         </motion.p>
 
-        <Button label="Shop Now" iconUrl={arrowRight} />
+        <Button label="Shop Now" iconUrl={arrowRight}/>
 
         <div className="flex flex-start items-start flex-wrap mt-20 w-full gap-16">
           {statistics.map((stat) => (
-            <div key={stat.label}>
+            <div key={stat.label} data-aos="fade-right">
               <p className="text-4xl font-palanquin font-bold">{stat.value}</p>
               <p className="leading-7 font-montserrat text-slate-gray">{stat.label}</p>
             </div>
@@ -37,7 +45,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="relative flex justify-center items-center flex-1 xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center">
+      <div className="relative flex justify-center items-center flex-1 xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center" data-aos="fade-left">
         <img src={bigShoe1} alt="shoe" width={610} height={500} className="object-contain relative z-10"/>
       </div>
 
